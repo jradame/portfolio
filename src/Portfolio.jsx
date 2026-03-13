@@ -135,6 +135,7 @@ const navLinks = ["Work", "About", "Contact"];
 // ─── NAV ─────────────────────────────────────────────────────────────────────
 function Nav({ activeSection }) {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -144,66 +145,225 @@ function Nav({ activeSection }) {
 
   const scrollTo = (id) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
   };
 
   return (
-    <nav style={{
-      position: "fixed",
-      top: 0, left: 0, right: 0,
-      zIndex: 100,
-      padding: "1.25rem 2.5rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
-      background: scrolled ? "rgba(2, 6, 23, 0.92)" : "transparent",
-      backdropFilter: scrolled ? "blur(12px)" : "none",
-      transition: "all 0.3s ease",
-    }}>
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        style={{
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          color: "#fff",
-          fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: "1.4rem",
-          letterSpacing: "0.12em",
-          padding: 0,
-        }}
-      >
-        JUSTIN ADAME
-      </button>
+    <>
+      <style>{`
+        @media (max-width: 768px) {
+          .nav-links { display: none !important; }
+          .hamburger { display: flex !important; }
+          .hero-photo { display: none !important; }
+          .hero-section {
+            grid-template-columns: 1fr !important;
+            padding: 0 2rem !important;
+            padding-top: 6rem !important;
+          }
+          .about-grid {
+            grid-template-columns: 1fr !important;
+            gap: 3rem !important;
+          }
+          .contact-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+          .projects-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
 
-      <ul style={{ display: "flex", gap: "2.5rem", listStyle: "none", margin: 0, padding: 0 }}>
-        {navLinks.map((link) => (
-          <li key={link}>
+      <nav style={{
+        position: "fixed",
+        top: 0, left: 0, right: 0,
+        zIndex: 100,
+        padding: "1.25rem 2.5rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
+        background: scrolled ? "rgba(2, 6, 23, 0.92)" : "transparent",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        transition: "all 0.3s ease",
+      }}>
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            color: "#fff",
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: "1.4rem",
+            letterSpacing: "0.12em",
+            padding: 0,
+          }}
+        >
+          JUSTIN ADAME
+        </button>
+
+        {/* desktop links */}
+        <ul className="nav-links" style={{ display: "flex", gap: "2.5rem", listStyle: "none", margin: 0, padding: 0 }}>
+          {navLinks.map((link) => (
+            <li key={link}>
+              <button
+                onClick={() => scrollTo(link)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  color: activeSection === link.toLowerCase() ? "#fff" : "rgba(255,255,255,0.45)",
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  transition: "color 0.2s",
+                  padding: 0,
+                }}
+              >
+                {link}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        {/* hamburger button */}
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen((o) => !o)}
+          style={{
+            display: "none",
+            flexDirection: "column",
+            gap: "5px",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            padding: "4px",
+          }}
+        >
+          <span style={{
+            display: "block", width: "24px", height: "2px",
+            background: "#fff",
+            transition: "all 0.3s",
+            transform: menuOpen ? "translateY(7px) rotate(45deg)" : "none",
+          }} />
+          <span style={{
+            display: "block", width: "24px", height: "2px",
+            background: "#fff",
+            transition: "all 0.3s",
+            opacity: menuOpen ? 0 : 1,
+          }} />
+          <span style={{
+            display: "block", width: "24px", height: "2px",
+            background: "#fff",
+            transition: "all 0.3s",
+            transform: menuOpen ? "translateY(-7px) rotate(-45deg)" : "none",
+          }} />
+        </button>
+      </nav>
+
+      {/* mobile menu overlay */}
+      {menuOpen && (
+        <div style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 99,
+          background: "rgba(2, 6, 23, 0.97)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "2.5rem",
+        }}>
+          {navLinks.map((link) => (
             <button
+              key={link}
               onClick={() => scrollTo(link)}
               style={{
                 background: "none",
                 border: "none",
                 cursor: "pointer",
-                color: activeSection === link.toLowerCase() ? "#fff" : "rgba(255,255,255,0.45)",
-                fontFamily: "'DM Mono', monospace",
-                fontSize: "0.75rem",
-                letterSpacing: "0.15em",
+                color: "#fff",
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontSize: "3rem",
+                letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                transition: "color 0.2s",
-                padding: 0,
               }}
             >
               {link}
             </button>
-          </li>
-        ))}
-      </ul>
-    </nav>
+          ))}
+        </div>
+      )}
+    </>
   );
 }
 
 // ─── HERO ─────────────────────────────────────────────────────────────────────
+function Typewriter({ lines, speed = 35, pauseBetween = 500 }) {
+  const [displayed, setDisplayed] = useState([""]);
+  const [lineIndex, setLineIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [pausing, setPausing] = useState(false);
+
+  useEffect(() => {
+    if (lineIndex >= lines.length) return;
+    if (pausing) {
+      const t = setTimeout(() => {
+        setDisplayed((d) => [...d, ""]);
+        setLineIndex((i) => i + 1);
+        setCharIndex(0);
+        setPausing(false);
+      }, pauseBetween);
+      return () => clearTimeout(t);
+    }
+    const currentLine = lines[lineIndex];
+    if (charIndex < currentLine.length) {
+      const t = setTimeout(() => {
+        setDisplayed((d) => {
+          const next = [...d];
+          next[lineIndex] = currentLine.slice(0, charIndex + 1);
+          return next;
+        });
+        setCharIndex((c) => c + 1);
+      }, speed);
+      return () => clearTimeout(t);
+    } else if (lineIndex < lines.length - 1) {
+      setPausing(true);
+    }
+  }, [charIndex, lineIndex, pausing, lines, speed, pauseBetween]);
+
+  return (
+    <p style={{
+      fontFamily: "'Lora', serif",
+      fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
+      color: "rgba(255,255,255,0.55)",
+      maxWidth: "440px",
+      marginTop: "2rem",
+      lineHeight: 1.7,
+    }}>
+      {displayed.map((line, i) => (
+        <span key={i} style={{ display: "block" }}>
+          {line}
+          {i === lineIndex && lineIndex < lines.length && (
+            <span style={{
+              display: "inline-block",
+              width: "2px",
+              height: "1em",
+              background: "rgba(255,255,255,0.55)",
+              marginLeft: "2px",
+              verticalAlign: "text-bottom",
+              animation: "blink 0.8s step-end infinite",
+            }} />
+          )}
+        </span>
+      ))}
+      <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
+    </p>
+  );
+}
+
 function Hero() {
   const [visible, setVisible] = useState(false);
 
@@ -215,6 +375,7 @@ function Hero() {
   return (
     <section
       id="hero"
+      className="hero-section"
       style={{
         minHeight: "100vh",
         display: "grid",
@@ -268,19 +429,20 @@ function Hero() {
           </span>
         </h1>
 
-        <p style={{
-          fontFamily: "'Lora', serif",
-          fontSize: "clamp(1rem, 1.5vw, 1.2rem)",
-          color: "rgba(255,255,255,0.55)",
-          maxWidth: "440px",
-          marginTop: "2rem",
-          lineHeight: 1.7,
+        <div style={{
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(20px)",
           transition: "all 0.8s ease 0.4s",
         }}>
-          I design interfaces people actually want to use, and build the code to back it up.
-        </p>
+          <Typewriter
+            lines={[
+              "I design interfaces people actually want to use,",
+              "and build the code to back it up.",
+            ]}
+            speed={32}
+            pauseBetween={400}
+          />
+        </div>
 
         <div style={{
           display: "flex", alignItems: "center", gap: "0.75rem",
@@ -302,7 +464,7 @@ function Hero() {
       </div>
 
       {/* right: photo */}
-      <div style={{
+      <div className="hero-photo" style={{
         position: "relative", zIndex: 1,
         display: "flex",
         justifyContent: "flex-end",
@@ -395,7 +557,7 @@ function Projects() {
         ))}
       </div>
 
-      <div style={{
+      <div className="projects-grid" style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
         gap: "0",
@@ -572,7 +734,7 @@ function About() {
         <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.08)" }} />
       </div>
 
-      <div style={{
+      <div className="about-grid" style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
         gap: "5rem",
@@ -680,7 +842,7 @@ function Contact() {
       </h2>
 
       {/* three column row */}
-      <div style={{
+      <div className="contact-grid" style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
         gap: "3rem",
