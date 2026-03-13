@@ -1,52 +1,16 @@
-# JUSTINPORTFOLIO
+# React + Vite
 
-A personal portfolio site built from scratch with React. This project showcases my web development work, including featured projects, technical skills, and a contact form powered by EmailJS. The portfolio is designed to be clean, responsive, and easy to navigate, with a focus on presenting my work to potential employers and collaborators.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- Fully responsive design with dark/light theme support  
-- Smooth UI interactions and animations  
-- Project cards with live demo and GitHub links  
-- Contact form integrated with EmailJS  
-- Built with React and modern front-end practices  
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Projects Included
+## Expanding the ESLint configuration
 
-- **CineScope** – Movie and TV search app using the OMDb API  
-- **Ultraverse NFT Marketplace** – NFT marketplace with React Router and theming  
-- **LibraryProject** – Online bookstore simulation with sorting, filtering, and ratings  
-- More projects coming soon  
-
----
-
-## Tech Stack
-
-- **React** (component-based architecture)  
-- **CSS3** (custom styles and animations)  
-- **JavaScript (ES6+)**
-- **Tailwind**
-- **EmailJS** (contact form integration)  
-- **Vercel** (deployment and hosting)  
-
----
-
-## Getting Started
-
-To run this project locally:
-
-```bash
-# Clone the repository
-git clone https://github.com/jradame/JUSTINPORTFOLIO.git
-
-# Navigate into the project folder
-cd JUSTINPORTFOLIO
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm start
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
