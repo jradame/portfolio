@@ -1,16 +1,55 @@
-# React + Vite
+# Justin Adame — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for a UX designer and frontend developer based in Austin, TX. Built from scratch with React and Vite — no templates, no UI kits.
 
-Currently, two official plugins are available:
+**Live site:** [justinadame.com](https://justinadame.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** — component architecture, hooks, state
+- **Vite** — build tool and dev server
+- **Inline CSS** — no Tailwind, no CSS-in-JS library, just intentional styling
+- **Vercel** — deployment
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Single-page scrollable layout with sticky nav
+- Typewriter animation on hero tagline
+- Project card grid with filter by type (UX / Dev / All)
+- Downloadable case study PDFs for each UX project
+- Fully responsive — hamburger menu and stacked layout on mobile
+- About section with career pivot story and skills
+- Contact section with resume download and social links
+
+## Projects Featured
+
+| Project | Type | Stack |
+|---|---|---|
+| PawFind | Full Stack + UX | Next.js, TypeScript, PostgreSQL, Prisma, Clerk, Stripe |
+| Swell | UX + Frontend | React, Vite, Figma |
+| TipTrack | UX Case Study | Figma, User Research |
+| EarlyDrop | UX Case Study | Figma, User Research |
+| FlowSync | Frontend | HTML, CSS, JavaScript |
+| Skinstric | Frontend | React, REST API |
+| Clouse Photography | Frontend | React, CSS |
+| Cinescope | Frontend | React, REST API |
+| The Lone Ranger... | Frontend + Design | React, CSS, Figma |
+
+## Running Locally
+
+```bash
+git clone https://github.com/jradame/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173)
+
+## Contact
+
+- **Email:** jradame@gmail.com
+- **LinkedIn:** [linkedin.com/in/justin-adame](https://www.linkedin.com/in/justin-adame/)
+- **GitHub:** [github.com/jradame](https://github.com/jradame)
