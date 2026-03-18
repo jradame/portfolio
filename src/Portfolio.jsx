@@ -128,6 +128,9 @@ const projects = [
     caseStudy: null,
     figma: null,
   },
+  {
+    id: 10,
+    title: "The Lone Ranger and Tonto Fistfight in Heaven",
     tag: "UX Design · Frontend Dev · Client Work",
     label: "Dev Project",
     type: ["dev", "design"],
