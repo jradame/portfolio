@@ -114,7 +114,7 @@ const projects = [
     caseStudy: null,
     figma: null,
   },
-  {
+   {
     id: 9,
     title: "Happy Hour Austin",
     tag: "UX Design · Full Stack",
@@ -123,9 +123,9 @@ const projects = [
     featured: false,
     desc: "Austin happy hour finder built by a bartender who knows the scene. Map-first layout with live deal pins, countdown timers, neighborhood filters, and auth. Built with React, Firebase, and Google Maps API.",
     stack: ["React", "Firebase", "Google Maps API", "Vite", "Vercel"],
-    year: "2025 - 2026",
+    year: "2026",
     url: "https://happyhour-austin.vercel.app/",
-    caseStudy: null,
+    caseStudy: "/files/HappyHour_Austin_CaseStudy.pdf",
     figma: null,
   },
   {
