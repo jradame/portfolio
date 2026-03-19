@@ -27,7 +27,7 @@ const projects = [
     stack: ["React", "TailwindCSS", "Vite", "Vercel", "Figma"],
     year: "2026",
     url: "https://swell-beta.vercel.app/",
-    caseStudy: "/files/Swell_V2_Case_Study.pdf",
+    caseStudy: "/files/SwellV2_Case_Study.pdf",
     figma: null,
   },
   {
