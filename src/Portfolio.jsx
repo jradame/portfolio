@@ -893,7 +893,7 @@ function Contact() {
             Say Hello
           </a>
           <a
-            href="/files/Main_Resume.pdf"
+            href="/files/Justin_Adame_Dev_Main_Resume.pdf"
             download
             style={{
               fontFamily: "'DM Mono', monospace",
