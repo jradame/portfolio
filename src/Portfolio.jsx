@@ -27,7 +27,7 @@ const projects = [
     stack: ["React Native", "Expo", "Next.js", "PostgreSQL", "Prisma", "Clerk", "Neon", "Vercel"],
     year: "2026",
     url: "https://swell-v3-bice.vercel.app/",
-    caseStudy: "/files/Swell_V2_Case_Study.pdf",
+    caseStudy: "/files/Swell_Case_StudyV3.pdf",
     figma: null,
   },
   {
