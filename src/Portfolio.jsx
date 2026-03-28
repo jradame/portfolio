@@ -9,7 +9,7 @@ const projects = [
     label: "Full Stack Case Study",
     type: ["design", "dev"],
     featured: true,
-    desc: "Full-stack pet adoption platform built from real frustration. Next.js App Router, PostgreSQL, Clerk auth, Stripe donations, Cloudinary uploads, and a 4-step adoption application flow. Not a tutorial project — a real product.",
+    desc: "Full-stack pet adoption platform built from real frustration. Next.js App Router, PostgreSQL, Clerk auth, Stripe donations, Cloudinary uploads, and a 4-step adoption application flow. Not a tutorial project -  a real product.",
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Clerk", "Stripe", "Tailwind", "Vercel"],
     year: "2026",
     url: "https://pawfind-xi.vercel.app/",
@@ -19,33 +19,32 @@ const projects = [
   {
     id: 2,
     title: "Swell",
-    tag: "UX Design · Full Stack · Mobile",
+    tag: "UX Design · Frontend Dev",
     label: "Full Stack Case Study",
     type: ["design", "dev"],
     featured: true,
-    desc: "Surf session tracker built across three versions. V3 is full-stack Next.js with Clerk auth, Neon PostgreSQL, and live swell data. The React Native Expo app runs on iOS and Android, connecting to the same backend. Custom design system, region-based spot selector, session logging, and progress stats.",
-    stack: ["React Native", "Expo", "Next.js", "PostgreSQL", "Prisma", "Clerk", "Neon", "Vercel"],
+    desc: "Mobile-first surf session tracker. Went from research and wireframes all the way to a shipped React app with a custom design system. The full loop.",
+    stack: ["React", "TailwindCSS", "Vite", "Vercel", "Figma"],
     year: "2026",
-    url: "https://swell-v3-bice.vercel.app/",
-    caseStudy: "/files/Swell_Case_StudyV3.pdf",
+    url: "https://swell-beta.vercel.app/",
+    caseStudy: "/files/Swell_UX_Case_Study.pdf",
     figma: null,
   },
   {
-    id: 3,
+    id: 2,
     title: "TipTrack",
     tag: "UX Design · Case Study",
     label: "UX Case Study",
     type: ["design"],
     featured: true,
-    desc: "Tip tracking app designed for service industry workers. Full research-to-prototype process — problem framing, lo-fi wireframes, hi-fi Figma mockups, usability testing.",
-    stack: ["Figma", "UX Research", "Wireframing", "Prototyping"],
-    year: "2024 - 2025",
+    desc: "Tip tracking app designed for service industry workers. Full research-to-prototype process -  problem framing, lo-fi wireframes, hi-fi Figma mockups, usability testing.",
+    year: "2024–2025",
     url: null,
-    caseStudy: "/files/TipTrack_CaseStudy.pdf",
+    caseStudy: "/files/TipTrack_CaseStudy.pdf", // replace with actual PDF path
     figma: null,
   },
   {
-    id: 4,
+    id: 3,
     title: "EarlyDrop",
     tag: "UX Design · Case Study",
     label: "UX Case Study",
@@ -53,13 +52,13 @@ const projects = [
     featured: true,
     desc: "Music preview app concept focused on early album discovery. Lo-fi to hi-fi UX flow, interaction design, and a full Figma prototype.",
     stack: ["Figma", "UX Research", "Prototyping"],
-    year: "2024 - 2025",
+    year: "2024–2025",
     url: null,
     caseStudy: "/files/EarlyDrop_CaseStudy.pdf",
     figma: null,
   },
   {
-    id: 5,
+    id: 4,
     title: "Skinstric",
     tag: "Frontend Dev",
     label: "Dev Project",
@@ -73,7 +72,7 @@ const projects = [
     figma: null,
   },
   {
-    id: 6,
+    id: 5,
     title: "FlowSync",
     tag: "Frontend Dev",
     label: "Dev Project",
@@ -87,7 +86,7 @@ const projects = [
     figma: null,
   },
   {
-    id: 7,
+    id: 6,
     title: "Clouse Photography",
     tag: "Frontend Dev · Client Work",
     label: "Dev Project",
@@ -101,7 +100,7 @@ const projects = [
     figma: null,
   },
   {
-    id: 8,
+    id: 7,
     title: "Cinescope",
     tag: "Frontend Dev",
     label: "Dev Project",
@@ -116,6 +115,20 @@ const projects = [
   },
   {
     id: 9,
+    title: "Happy Hour Austin",
+    tag: "UX Design · Full Stack",
+    label: "Full Stack Project",
+    type: ["design", "dev"],
+    featured: false,
+    desc: "Austin happy hour finder built by a bartender who knows the scene. Map-first layout with live deal pins, countdown timers, neighborhood filters, and auth. Built with React, Firebase, and Google Maps API.",
+    stack: ["React", "Firebase", "Google Maps API", "Vite", "Vercel"],
+    year: "2026",
+    url: "https://happyhour-austin.vercel.app/",
+    caseStudy: "/files/HappyHour_CaseStudy.pdf",
+    figma: null,
+  },
+  {
+    id: 10,
     title: "The Lone Ranger and Tonto Fistfight in Heaven",
     tag: "UX Design · Frontend Dev · Client Work",
     label: "Dev Project",
@@ -409,7 +422,7 @@ function Hero() {
           transform: visible ? "translateY(0)" : "translateY(10px)",
           transition: "all 0.6s ease 0.1s",
         }}>
-          UX Designer &amp; Frontend Developer — Austin, TX
+          UX Designer &amp; Frontend Developer - Austin, TX
         </p>
 
         <h1 style={{
@@ -675,7 +688,7 @@ function Projects() {
                 </a>
               )}
               {project.caseStudy && (
-                <a href={project.caseStudy} target="_blank" rel="noreferrer" style={{
+                <a href={project.caseStudy} download target="_blank" rel="noreferrer" style={{
                   fontFamily: "'DM Mono', monospace",
                   fontSize: "0.65rem",
                   letterSpacing: "0.15em",
@@ -714,12 +727,10 @@ function Projects() {
 // ─── ABOUT ────────────────────────────────────────────────────────────────────
 function About() {
   const skills = [
-  "Figma", "React", "React Native", "Expo",
-  "TypeScript", "Next.js", "TailwindCSS", "HTML/CSS",
-  "JavaScript", "PostgreSQL", "Prisma", "Clerk",
-  "Neon", "Vite", "Git/GitHub", "Vercel",
-  "UX Research", "Wireframing", "Prototyping", "Responsive Design",
-];
+    "Figma", "React", "TypeScript", "Next.js", "TailwindCSS", "HTML/CSS", "JavaScript",
+    "Vite", "Git/GitHub", "UX Research", "Wireframing", "Prototyping",
+    "Vercel", "Responsive Design",
+  ];
 
   return (
     <section id="about" style={{ padding: "6rem 2.5rem" }}>
@@ -764,7 +775,7 @@ function About() {
             lineHeight: 1.8,
             marginBottom: "1.25rem",
           }}>
-            Twenty years behind a bar in Austin — Emo's, The Ritz, Liberty Bar, and multiple SXSW runs — teaches you things no design course will. You read people in seconds. You solve problems before they become complaints. You design every interaction to feel effortless even when the chaos behind the bar is anything but. I didn't realize that was UX until I started studying it.
+            Twenty years behind a bar in Austin - Emo's, The Ritz, Liberty Bar, and multiple SXSW runs - teaches you things no design course will. You read people in seconds. You solve problems before they become complaints. You design every interaction to feel effortless even when the chaos behind the bar is anything but. I didn't realize that was UX until I started studying it.
           </p>
           <p style={{
             fontFamily: "'Lora', serif",
@@ -772,7 +783,7 @@ function About() {
             color: "rgba(255,255,255,0.65)",
             lineHeight: 1.8,
           }}>
-            Now I build the things I used to wish existed — apps for bartenders tracking tips, surfers logging sessions, music fans getting early access. I've got the Google UX Design Certificate, completed Frontend Simplified, and I build in React, TypeScript, Next.js, Figma, and whatever else the project needs. I'm based in Austin and looking for a team that builds things worth using.
+            Now I build the things I used to wish existed - apps for bartenders tracking tips, surfers logging sessions, music fans getting early access. I've got the Google UX Design Certificate, completed Frontend Simplified, and I build in React, TypeScript, Next.js, Figma, and whatever else the project needs. I'm based in Austin and looking for a team that builds things worth using.
           </p>
         </div>
 
@@ -850,7 +861,7 @@ function Contact() {
         gap: "3rem",
         alignItems: "start",
       }}>
-        {/* col 1 — copy */}
+        {/* col 1 -  copy */}
         <p style={{
           fontFamily: "'Lora', serif",
           fontSize: "1rem",
@@ -858,10 +869,10 @@ function Contact() {
           lineHeight: 1.8,
           margin: 0,
         }}>
-          Open to UX design roles, frontend dev positions, freelance projects, and apprenticeships. Based in Austin, TX — remote friendly.
+          Open to UX design roles, frontend dev positions, freelance projects, and apprenticeships. Based in Austin, TX -  remote friendly.
         </p>
 
-        {/* col 2 — buttons */}
+        {/* col 2 -  buttons */}
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           <a
             href="mailto:jradame@gmail.com"
@@ -881,7 +892,7 @@ function Contact() {
             Say Hello
           </a>
           <a
-            href="/files/Justin_Adame_Dev_Main_Resume.pdf"
+            href="/files/Main_Resume.pdf"
             download
             style={{
               fontFamily: "'DM Mono', monospace",
@@ -901,7 +912,7 @@ function Contact() {
           </a>
         </div>
 
-        {/* col 3 — social links */}
+        {/* col 3 -  social links */}
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           {[
             { label: "GitHub", url: "https://github.com/jradame" },
