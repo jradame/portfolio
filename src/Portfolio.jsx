@@ -714,10 +714,12 @@ function Projects() {
 // ─── ABOUT ────────────────────────────────────────────────────────────────────
 function About() {
   const skills = [
-    "Figma", "React", "TypeScript", "Next.js", "TailwindCSS", "HTML/CSS", "JavaScript",
-    "Vite", "Git/GitHub", "UX Research", "Wireframing", "Prototyping",
-    "Vercel", "Responsive Design",
-  ];
+  "Figma", "React", "React Native", "Expo",
+  "TypeScript", "Next.js", "TailwindCSS", "HTML/CSS",
+  "JavaScript", "PostgreSQL", "Prisma", "Clerk",
+  "Neon", "Vite", "Git/GitHub", "Vercel",
+  "UX Research", "Wireframing", "Prototyping", "Responsive Design",
+];
 
   return (
     <section id="about" style={{ padding: "6rem 2.5rem" }}>
