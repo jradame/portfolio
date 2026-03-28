@@ -5,11 +5,11 @@ const projects = [
   {
     id: 1,
     title: "PawFind",
-    tag: "UX Design · Full Stack",
+    tag: "UX Design - Full Stack",
     label: "Full Stack Case Study",
     type: ["design", "dev"],
     featured: true,
-    desc: "Full-stack pet adoption platform built from real frustration. Next.js App Router, PostgreSQL, Clerk auth, Stripe donations, Cloudinary uploads, and a 4-step adoption application flow. Not a tutorial project — a real product.",
+    desc: "Full-stack pet adoption platform built from real frustration. Next.js App Router, PostgreSQL, Clerk auth, Stripe donations, Cloudinary uploads, and a 4-step adoption application flow. Not a tutorial project - a real product.",
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Clerk", "Stripe", "Tailwind", "Vercel"],
     year: "2026",
     url: "https://pawfind-xi.vercel.app/",
@@ -19,7 +19,7 @@ const projects = [
   {
     id: 2,
     title: "Swell",
-    tag: "UX Design · Full Stack · Mobile",
+    tag: "UX Design - Full Stack - Mobile",
     label: "Full Stack Case Study",
     type: ["design", "dev"],
     featured: true,
@@ -33,11 +33,11 @@ const projects = [
   {
     id: 3,
     title: "TipTrack",
-    tag: "UX Design · Case Study",
+    tag: "UX Design - Case Study",
     label: "UX Case Study",
     type: ["design"],
     featured: true,
-    desc: "Tip tracking app designed for service industry workers. Full research-to-prototype process — problem framing, lo-fi wireframes, hi-fi Figma mockups, usability testing.",
+    desc: "Tip tracking app designed for service industry workers. Full research-to-prototype process - problem framing, lo-fi wireframes, hi-fi Figma mockups, usability testing.",
     stack: ["Figma", "UX Research", "Wireframing", "Prototyping"],
     year: "2024 - 2025",
     url: null,
@@ -47,7 +47,7 @@ const projects = [
   {
     id: 4,
     title: "EarlyDrop",
-    tag: "UX Design · Case Study",
+    tag: "UX Design - Case Study",
     label: "UX Case Study",
     type: ["design"],
     featured: true,
@@ -89,7 +89,7 @@ const projects = [
   {
     id: 7,
     title: "Clouse Photography",
-    tag: "Frontend Dev · Client Work",
+    tag: "Frontend Dev - Client Work",
     label: "Dev Project",
     type: ["dev"],
     featured: false,
@@ -117,7 +117,7 @@ const projects = [
   {
     id: 9,
     title: "The Lone Ranger and Tonto Fistfight in Heaven",
-    tag: "UX Design · Frontend Dev · Client Work",
+    tag: "UX Design - Frontend Dev - Client Work",
     label: "Dev Project",
     type: ["dev", "design"],
     featured: false,
