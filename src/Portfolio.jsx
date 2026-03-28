@@ -126,7 +126,7 @@ const projects = [
     year: "2026",
     url: "https://rios-band.vercel.app",
     caseStudy: null,
-    figma: null;
+    figma: null,
   },
 ];
 
