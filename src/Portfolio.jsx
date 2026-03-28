@@ -409,7 +409,7 @@ function Hero() {
           transform: visible ? "translateY(0)" : "translateY(10px)",
           transition: "all 0.6s ease 0.1s",
         }}>
-          UX Designer &amp; Frontend Developer — Austin, TX
+          UX Designer &amp; Frontend Developer - Austin, TX
         </p>
 
         <h1 style={{
@@ -764,7 +764,7 @@ function About() {
             lineHeight: 1.8,
             marginBottom: "1.25rem",
           }}>
-            Twenty years behind a bar in Austin — Emo's, The Ritz, Liberty Bar, and multiple SXSW runs — teaches you things no design course will. You read people in seconds. You solve problems before they become complaints. You design every interaction to feel effortless even when the chaos behind the bar is anything but. I didn't realize that was UX until I started studying it.
+            Twenty years behind a bar in Austin - Emo's, The Ritz, Liberty Bar, and multiple SXSW runs - teaches you things no design course will. You read people in seconds. You solve problems before they become complaints. You design every interaction to feel effortless even when the chaos behind the bar is anything but. I didn't realize that was UX until I started studying it.
           </p>
           <p style={{
             fontFamily: "'Lora', serif",
@@ -772,7 +772,7 @@ function About() {
             color: "rgba(255,255,255,0.65)",
             lineHeight: 1.8,
           }}>
-            Now I build the things I used to wish existed — apps for bartenders tracking tips, surfers logging sessions, music fans getting early access. I've got the Google UX Design Certificate, completed Frontend Simplified, and I build in React, TypeScript, Next.js, Figma, and whatever else the project needs. I'm based in Austin and looking for a team that builds things worth using.
+            Now I build the things I used to wish existed - apps for bartenders tracking tips, surfers logging sessions, music fans getting early access. I've got the Google UX Design Certificate, completed Frontend Simplified, and I build in React, TypeScript, Next.js, Figma, and whatever else the project needs. I'm based in Austin and looking for a team that builds things worth using.
           </p>
         </div>
 
@@ -858,7 +858,7 @@ function Contact() {
           lineHeight: 1.8,
           margin: 0,
         }}>
-          Open to UX design roles, frontend dev positions, freelance projects, and apprenticeships. Based in Austin, TX — remote friendly.
+          Open to UX design roles, frontend dev positions, freelance projects, and apprenticeships. Based in Austin, TX - remote friendly.
         </p>
 
         {/* col 2 — buttons */}
