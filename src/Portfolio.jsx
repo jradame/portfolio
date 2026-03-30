@@ -114,20 +114,6 @@ const projects = [
     caseStudy: null,
     figma: null,
   },
-  {
-    id: 9,
-    title: "The Lone Ranger and Tonto Fistfight in Heaven",
-    tag: "UX Design - Frontend Dev - Client Work",
-    label: "Dev Project",
-    type: ["dev", "design"],
-    featured: false,
-    desc: "Band site for an Austin desert-noir act. Sepia-toned aesthetic, show calendar, about and contact modals. Designed and built start to finish.",
-    stack: ["React", "CSS", "Vercel", "Figma"],
-    year: "2026",
-    url: "https://rios-band.vercel.app",
-    caseStudy: null,
-    figma: null,
-  },
 ];
 
 const navLinks = ["Work", "About", "Contact"];
@@ -561,7 +547,7 @@ function Projects() {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
         gap: "0",
-        border: "1px solid rgba(255,255,255,0.08)",
+        // border: "1px solid rgba(255,255,255,0.08)",
       }}>
         {filtered.map((project) => (
           <div
