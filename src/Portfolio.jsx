@@ -26,8 +26,8 @@ const projects = [
     desc: "Surf session tracker built across three versions. V3 is full-stack Next.js with Clerk auth, Neon PostgreSQL, and live swell data. The React Native Expo app runs on iOS (Android soon) and has been submitted for App Store review. Custom design system, region-based spot selector, session logging, and progress stats.",
     stack: ["React Native", "Expo", "Next.js", "PostgreSQL", "Prisma", "Clerk", "Neon", "Vercel"],
     year: "2026",
-    url: "https://swell-v3-bice.vercel.app/",
-    caseStudy: "/files/Swell_Case_StudyV3.pdf",
+    url: "https://swelltrackerapp.com/",
+    caseStudy: "/files/Swell_CaseStudy_2026.pdf",
     figma: null,
   },
   {
