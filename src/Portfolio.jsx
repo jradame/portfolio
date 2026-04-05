@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
+// DATA
 const projects = [
   {
     id: 1,
@@ -13,6 +13,7 @@ const projects = [
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Clerk", "Stripe", "Tailwind", "Vercel"],
     year: "2026",
     url: "https://pawfind-xi.vercel.app/",
+    appStore: null,
     caseStudy: "/files/PawFind_CaseStudy.pdf",
     figma: null,
   },
@@ -23,10 +24,11 @@ const projects = [
     label: "Full Stack Case Study",
     type: ["design", "dev"],
     featured: true,
-    desc: "Surf session tracker built across three versions. V3 is full-stack Next.js with Clerk auth, Neon PostgreSQL, and live swell data. The React Native Expo app runs on iOS (Android soon) and has been submitted for App Store review. Custom design system, region-based spot selector, session logging, and progress stats.",
+    desc: "Surf session tracker built across three versions. V3 is full-stack Next.js with Clerk auth, Neon PostgreSQL, and live swell data. The React Native Expo app is live on the iOS App Store. Custom design system, region-based spot selector, tide data, water temperature, session logging, and progress stats.",
     stack: ["React Native", "Expo", "Next.js", "PostgreSQL", "Prisma", "Clerk", "Neon", "Vercel"],
     year: "2026",
     url: "https://swelltrackerapp.com/",
+    appStore: "https://apps.apple.com/us/app/swell/id6761311243",
     caseStudy: "/files/Swell_CaseStudy_2026.pdf",
     figma: null,
   },
@@ -41,6 +43,7 @@ const projects = [
     stack: ["Figma", "UX Research", "Wireframing", "Prototyping"],
     year: "2024 - 2025",
     url: null,
+    appStore: null,
     caseStudy: "/files/TipTrack_CaseStudy.pdf",
     figma: null,
   },
@@ -55,6 +58,7 @@ const projects = [
     stack: ["Figma", "UX Research", "Prototyping"],
     year: "2024 - 2025",
     url: null,
+    appStore: null,
     caseStudy: "/files/EarlyDrop_CaseStudy.pdf",
     figma: null,
   },
@@ -69,6 +73,7 @@ const projects = [
     stack: ["React", "TailwindCSS", "REST API", "Vite"],
     year: "2025",
     url: "https://skinstricapp.vercel.app/",
+    appStore: null,
     caseStudy: null,
     figma: null,
   },
@@ -83,6 +88,7 @@ const projects = [
     stack: ["HTML", "CSS", "JavaScript"],
     year: "2026",
     url: "https://saaslandingpage-three.vercel.app/",
+    appStore: null,
     caseStudy: null,
     figma: null,
   },
@@ -97,6 +103,7 @@ const projects = [
     stack: ["React", "CSS", "GitHub Pages"],
     year: "2026",
     url: "https://clouse.vercel.app/",
+    appStore: null,
     caseStudy: null,
     figma: null,
   },
@@ -111,6 +118,7 @@ const projects = [
     stack: ["React", "REST API", "CSS", "Vercel"],
     year: "2025",
     url: "https://cinescope-project.vercel.app",
+    appStore: null,
     caseStudy: null,
     figma: null,
   },
@@ -118,7 +126,6 @@ const projects = [
 
 const navLinks = ["Work", "About", "Contact"];
 
-// ─── NAV ─────────────────────────────────────────────────────────────────────
 function Nav({ activeSection }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -189,7 +196,6 @@ function Nav({ activeSection }) {
           JUSTIN ADAME
         </button>
 
-        {/* desktop links */}
         <ul className="nav-links" style={{ display: "flex", gap: "2.5rem", listStyle: "none", margin: 0, padding: 0 }}>
           {navLinks.map((link) => (
             <li key={link}>
@@ -214,7 +220,6 @@ function Nav({ activeSection }) {
           ))}
         </ul>
 
-        {/* hamburger button */}
         <button
           className="hamburger"
           onClick={() => setMenuOpen((o) => !o)}
@@ -249,7 +254,6 @@ function Nav({ activeSection }) {
         </button>
       </nav>
 
-      {/* mobile menu overlay */}
       {menuOpen && (
         <div style={{
           position: "fixed",
@@ -286,7 +290,6 @@ function Nav({ activeSection }) {
   );
 }
 
-// ─── HERO ─────────────────────────────────────────────────────────────────────
 function Typewriter({ lines, speed = 35, pauseBetween = 500 }) {
   const [displayed, setDisplayed] = useState([""]);
   const [lineIndex, setLineIndex] = useState(0);
@@ -374,7 +377,6 @@ function Hero() {
         gap: "2rem",
       }}
     >
-      {/* grain overlay */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0,
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,
@@ -382,7 +384,6 @@ function Hero() {
         opacity: 0.6,
       }} />
 
-      {/* left: text */}
       <div style={{ position: "relative", zIndex: 1 }}>
         <p style={{
           fontFamily: "'DM Mono', monospace",
@@ -449,7 +450,6 @@ function Hero() {
         </div>
       </div>
 
-      {/* right: photo */}
       <div className="hero-photo" style={{
         position: "relative", zIndex: 1,
         display: "flex",
@@ -496,7 +496,6 @@ function Hero() {
   );
 }
 
-// ─── PROJECTS ─────────────────────────────────────────────────────────────────
 function Projects() {
   const [filter, setFilter] = useState("all");
   const [hovered, setHovered] = useState(null);
@@ -547,7 +546,6 @@ function Projects() {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
         gap: "0",
-        // border: "1px solid rgba(255,255,255,0.08)",
       }}>
         {filtered.map((project) => (
           <div
@@ -660,6 +658,20 @@ function Projects() {
                   Live Site →
                 </a>
               )}
+              {project.appStore && (
+                <a href={project.appStore} target="_blank" rel="noreferrer" style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.65rem",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.55)",
+                  textDecoration: "none",
+                  borderBottom: "1px solid rgba(255,255,255,0.2)",
+                  paddingBottom: "1px",
+                }}>
+                  App Store →
+                </a>
+              )}
               {project.caseStudy && (
                 <a href={project.caseStudy} target="_blank" rel="noreferrer" style={{
                   fontFamily: "'DM Mono', monospace",
@@ -689,7 +701,6 @@ function Projects() {
                 </a>
               )}
             </div>
-
           </div>
         ))}
       </div>
@@ -697,15 +708,14 @@ function Projects() {
   );
 }
 
-// ─── ABOUT ────────────────────────────────────────────────────────────────────
 function About() {
   const skills = [
-  "Figma", "React", "React Native", "Expo",
-  "TypeScript", "Next.js", "TailwindCSS", "HTML/CSS",
-  "JavaScript", "PostgreSQL", "Prisma", "Clerk",
-  "Neon", "Vite", "Git/GitHub", "Vercel",
-  "UX Research", "Wireframing", "Prototyping", "Responsive Design",
-];
+    "Figma", "React", "React Native", "Expo",
+    "TypeScript", "Next.js", "TailwindCSS", "HTML/CSS",
+    "JavaScript", "PostgreSQL", "Prisma", "Clerk",
+    "Neon", "Vite", "Git/GitHub", "Vercel",
+    "UX Research", "Wireframing", "Prototyping", "Responsive Design",
+  ];
 
   return (
     <section id="about" style={{ padding: "6rem 2.5rem" }}>
@@ -796,7 +806,6 @@ function About() {
   );
 }
 
-// ─── CONTACT ──────────────────────────────────────────────────────────────────
 function Contact() {
   return (
     <section id="contact" style={{ padding: "6rem 2.5rem 8rem" }}>
@@ -813,7 +822,6 @@ function Contact() {
         <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.08)" }} />
       </div>
 
-      {/* full-width heading */}
       <h2 style={{
         fontFamily: "'Bebas Neue', sans-serif",
         fontSize: "clamp(4rem, 12vw, 10rem)",
@@ -822,21 +830,19 @@ function Contact() {
         lineHeight: 0.9,
         letterSpacing: "0.02em",
       }}>
-        LET'S{" "}
+        {"LET'S "}
         <span style={{ color: "transparent", WebkitTextStroke: "1px rgba(255,255,255,0.3)" }}>
           WORK
-        </span>{" "}
-        TOGETHER
+        </span>
+        {" TOGETHER"}
       </h2>
 
-      {/* three column row */}
       <div className="contact-grid" style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
         gap: "3rem",
         alignItems: "start",
       }}>
-        {/* col 1 — copy */}
         <p style={{
           fontFamily: "'Lora', serif",
           fontSize: "1rem",
@@ -847,7 +853,6 @@ function Contact() {
           Open to UX design roles, frontend dev positions, freelance projects, and apprenticeships. Based in Austin, TX - remote friendly.
         </p>
 
-        {/* col 2 — buttons */}
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           <a
             href="mailto:jradame@gmail.com"
@@ -887,7 +892,6 @@ function Contact() {
           </a>
         </div>
 
-        {/* col 3 — social links */}
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           {[
             { label: "GitHub", url: "https://github.com/jradame" },
@@ -912,7 +916,6 @@ function Contact() {
   );
 }
 
-// ─── APP ──────────────────────────────────────────────────────────────────────
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
 
