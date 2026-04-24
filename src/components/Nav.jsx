@@ -3,7 +3,7 @@ import { theme } from "../theme";
 
 const navLinks = ["Work", "About", "Contact"];
 
-export default function Nav({ activeSection }) {
+export default function Nav({ activeSection, onContactClick }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -21,9 +21,15 @@ export default function Nav({ activeSection }) {
     };
   }, [menuOpen]);
 
-  const scrollTo = (id) => {
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
+  const handleLinkClick = (link) => {
     setMenuOpen(false);
+
+    if (link === "Contact") {
+      onContactClick?.();
+      return;
+    }
+
+    document.getElementById(link.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -67,7 +73,7 @@ export default function Nav({ activeSection }) {
           {navLinks.map((link) => (
             <li key={link}>
               <button
-                onClick={() => scrollTo(link)}
+                onClick={() => handleLinkClick(link)}
                 style={{
                   background: "none",
                   border: "none",
@@ -152,7 +158,7 @@ export default function Nav({ activeSection }) {
           {navLinks.map((link) => (
             <button
               key={link}
-              onClick={() => scrollTo(link)}
+              onClick={() => handleLinkClick(link)}
               style={{
                 background: "none",
                 border: "none",

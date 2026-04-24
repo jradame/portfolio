@@ -6,7 +6,7 @@ const socials = [
   { label: "LinkedIn", url: "https://www.linkedin.com/in/justin-adame/" },
 ];
 
-export default function Contact() {
+export default function Contact({ onContactClick }) {
   return (
     <section id="contact" style={{ padding: "6rem 2.5rem 8rem" }}>
       <SectionHeader number="03" title="Contact" />
@@ -55,20 +55,22 @@ export default function Contact() {
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-          <a
-            href="mailto:jradame@gmail.com"
+          <button
+            onClick={onContactClick}
             style={{
               ...theme.text.label,
               color: theme.colors.bg,
               background: theme.colors.text,
               padding: "0.85rem 2rem",
-              textDecoration: "none",
+              border: "none",
               borderRadius: "2px",
               textAlign: "center",
+              cursor: "pointer",
+              fontFamily: theme.fonts.mono,
             }}
           >
             Say Hello
-          </a>
+          </button>
           <a
             href="/files/Justin_Adame_Dev_Main_Resume.pdf"
             download
