@@ -34,7 +34,7 @@ export const projects = [
     tag: "UX Design - Mobile App",
     type: ["design"],
     featured: true,
-    desc: desc: "Tip tracking app for service industry workers. Full research-to-prototype-to-shipped product. Live on the iOS App Store.",
+    desc: "Tip tracking app for service industry workers. Full research-to-prototype-to-shipped product. Live on the iOS App Store.",
     stack: ["Figma", "UX Research", "Wireframing", "Prototyping"],
     year: "2025 - 2026",
     url: null,
