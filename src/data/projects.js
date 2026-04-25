@@ -39,7 +39,7 @@ export const projects = [
     year: "2024 - 2025",
     url: null,
     appStore: null,
-    caseStudy: "/files/TipTrack_CaseStudy.pdf",
+    caseStudy: "/files/TipTrackCaseStudyFinal.pdf",
     figma: null,
   },
   {
